@@ -63,5 +63,5 @@ only via `app.secretStorage`, integrations disabled by default. Never commit cus
 ## Definition of Done (for changes)
 
 Code + tests (domain/persistence/timer/billing as relevant) + `npm run check` green + docs updated
-(DATA_MODEL for schema changes, CHANGELOG, IMPLEMENTATION_STATUS) + for UI changes: verified in Obsidian
+(DATA_MODEL for schema changes, IMPLEMENTATION_STATUS) + for UI changes: verified in Obsidian
 (test vault) or listed as unverified.

@@ -24,4 +24,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "${GITHUB_REF_NAME}" main.js manifest.json styles.css \
-            --title "${GITHUB_REF_NAME}" --notes "See CHANGELOG.md" --draft
+            --title "${GITHUB_REF_NAME}" --generate-notes --draft

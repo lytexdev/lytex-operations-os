@@ -342,8 +342,8 @@ export class LytexSettingTab extends PluginSettingTab {
       .setName('Backup & Export')
       .setDesc(
         msg(
-          'Alle Daten liegen als Markdown im Stammordner. Für ein Backup genügt eine Kopie des Vaults inkl. .obsidian/plugins/lytex-operations-os/state (siehe BACKUP_RECOVERY.md).',
-          'All data are Markdown notes in the root folder. For a backup, copy the vault incl. .obsidian/plugins/lytex-operations-os/state (see BACKUP_RECOVERY.md).',
+          'Alle Daten liegen als Markdown im Stammordner. Für ein Backup genügt eine Kopie des Vaults inkl. .obsidian/plugins/lytex-operations-os/state.',
+          'All data are Markdown notes in the root folder. For a backup, copy the vault incl. .obsidian/plugins/lytex-operations-os/state.',
         ),
       );
   }

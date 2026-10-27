@@ -30,4 +30,4 @@ Read [ARCHITECTURE.md](ARCHITECTURE.md) and [DEVELOPMENT.md](DEVELOPMENT.md). Ke
 
 - Keep PRs focused; describe what changed and how you tested it (including manual tests in Obsidian
   for UI changes).
-- Update `CHANGELOG.md` under an "Unreleased" heading.
+- Describe user-visible changes in the PR description (they become the release notes).

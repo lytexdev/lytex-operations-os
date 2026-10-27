@@ -92,4 +92,4 @@ in narrow panes.
 `infrastructure/integrations/integrations.ts` defines the adapter contract (`AccountingAdapter`). Only the
 local CSV export exists. Lexware Office and GitHub are **not implemented** (no undocumented endpoints, no
 credential storage). Obsidian ≥ 1.11.4 offers `app.secretStorage` (Keychain); a future adapter should use
-it – see SECURITY.md.
+it.

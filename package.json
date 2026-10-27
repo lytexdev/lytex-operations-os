@@ -19,7 +19,8 @@
     "deploy": "node scripts/deploy.mjs",
     "example-vault": "node scripts/build-example-vault.mjs",
     "check-data": "node scripts/check-data.mjs",
-    "release": "node scripts/release.mjs"
+    "release": "node scripts/release.mjs",
+    "dist": "node scripts/publish-dist.mjs"
   },
   "license": "MIT",
   "author": "LYTEX",

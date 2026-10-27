@@ -8,7 +8,7 @@ import { msg } from '@/shared/i18n';
  * Prepared but NOT implemented (no network code exists):
  *  - Lexware Office: requires an API key. Obsidian offers no encrypted secret storage to
  *    plugins (data.json is plain text), so the adapter stays disabled until a safe storage
- *    approach is available (see SECURITY.md).
+ *    approach is available.
  */
 export type IntegrationStatus = 'available' | 'disabled' | 'not_implemented';
 
