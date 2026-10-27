@@ -12,7 +12,7 @@ Node.js ≥ 20 is only needed to build from source.
 ## From source
 
 ```bash
-git clone <repository-url> lytex-operations-os
+git clone https://github.com/lytexdev/lytex-operations-os
 cd lytex-operations-os
 npm ci
 npm run build

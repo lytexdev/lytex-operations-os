@@ -5,7 +5,7 @@ tracking, billing preparation, quotes, expenses, recurring work, dashboards. Dat
 YAML frontmatter under a configurable root folder (default `LYTEX OS/`).
 
 **Current phase:** 0.3.0 – first public open-source release (MIT). Integrations limited to CSV; API keys for Lexware Office/OpenAI/DeepL can be stored but are unused. See
-IMPLEMENTATION_STATUS.md for open items before starting work, and update it when you finish.
+IMPLEMENTATION_STATUS.md for open items before starting work and update it when you finish.
 
 ## Commands
 

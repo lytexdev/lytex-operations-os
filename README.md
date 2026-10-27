@@ -1,13 +1,11 @@
 # LYTEX Operations OS
 
-**Local-first business operations for freelancers and small IT service businesses – inside Obsidian.**
+**Local-first business operations for freelancers and small IT service businesses, inside Obsidian.**
 
 CRM, projects, tickets with Kanban, crash-safe time tracking, billing preparation, quotes, expenses,
 recurring maintenance work, dashboards and analytics. Every record is a plain Markdown note with YAML
 frontmatter in your vault: readable, searchable and versionable even without the plugin.
 No cloud, no backend, no telemetry.
-
-> 🇩🇪 Deutsch: siehe [unten](#deutsch).
 
 ## Features
 
@@ -27,7 +25,6 @@ No cloud, no backend, no telemetry.
 - **Dashboard & analytics** with clearly defined metrics (tracked ≠ billable ≠ invoiced ≠ paid).
 - **Data integrity** – schema validation, write-ahead journal for crash recovery, corrupt-file and
   duplicate-ID detection, referential checks, schema migrations.
-- **German and English UI** (follows Obsidian's language), configurable accent colour.
 - **API keys** for future integrations are stored in Obsidian's encrypted keychain, never in notes.
 
 ## Installation
@@ -55,31 +52,14 @@ Build from source: see [DEVELOPMENT.md](DEVELOPMENT.md). Want to try it with sam
 | [DATA_MODEL.md](DATA_MODEL.md)                                        | Entities, fields, states, metric definitions |
 | [DEVELOPMENT.md](DEVELOPMENT.md)                                      | Dev setup, scripts, conventions              |
 | [TEST_PLAN.md](TEST_PLAN.md)                                          | Automated and manual tests, performance      |
-| [SECURITY.md](SECURITY.md)                                            | Privacy, secrets, reporting vulnerabilities  |
-| [BACKUP_RECOVERY.md](BACKUP_RECOVERY.md)                              | Backups and recovery procedures              |
 | [CONTRIBUTING.md](CONTRIBUTING.md)                                    | How to contribute                            |
-| [CHANGELOG.md](CHANGELOG.md)                                          | Release notes                                |
 
 ## Status
 
 Version 0.3.0 – used in production by its author. Integrations (Lexware Office, OpenAI, DeepL) are
-prepared but **not implemented yet**; CSV export is the accounting interface. Mobile is not supported.
+prepared but not implemented yet; CSV export is the accounting interface. Mobile is not supported.
 See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) for known limitations.
 
 ## License
 
-[MIT](LICENSE) © LYTEX
-
----
-
-## Deutsch
-
-**LYTEX Operations OS** ist ein lokales Business-System für Freelancer und kleine IT-Dienstleister direkt
-in Obsidian: CRM, Projekte, Tickets mit Kanban, absturzsichere Zeiterfassung, Abrechnungsvorbereitung,
-Angebote, Ausgaben, wiederkehrende Wartungsaufgaben und Auswertungen. Alle Daten sind normale
-Markdown-Notizen in deinem Vault – ohne Cloud, ohne Server, ohne Telemetrie.
-
-Installation: `main.js`, `manifest.json` und `styles.css` aus dem neuesten Release nach
-`<Vault>/.obsidian/plugins/lytex-operations-os/` kopieren und unter _Einstellungen → Community-Plugins_
-aktivieren. Die Oberfläche folgt automatisch der Obsidian-Sprache (Deutsch/Englisch).
-Bedienungsanleitung: [USER_GUIDE.de.md](USER_GUIDE.de.md).
+[MIT](LICENSE) © lytex
