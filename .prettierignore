@@ -1,0 +1,9 @@
+node_modules
+main.js
+package-lock.json
+example-vault
+release
+test-vault
+.example-vault
+coverage
+.github
