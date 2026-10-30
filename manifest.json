@@ -1,7 +1,7 @@
 {
   "id": "lytex-operations-os",
   "name": "LYTEX Operations OS",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "minAppVersion": "1.11.4",
   "description": "Local-first business operations for freelancers: CRM, projects, tickets, crash-safe time tracking, billing preparation, quotes, expenses and recurring work.",
   "author": "LYTEX",
