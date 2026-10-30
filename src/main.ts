@@ -19,7 +19,7 @@ import {
   type LytexSettings,
 } from '@/core/configuration/settings';
 import { themeColors } from '@/shared/utilities/color';
-import { migrateLegacyAssignees } from '@/application/use-cases/tickets';
+import { migrateLegacyAssignees, archiveDoneTickets } from '@/application/use-cases/tickets';
 import { safeFileName } from '@/shared/utilities/text';
 import { VaultFileStore, PluginRawStore } from '@/infrastructure/obsidian/vault-store';
 import { writeOverviewNotes } from '@/infrastructure/markdown/generated-notes';
@@ -233,6 +233,8 @@ export default class LytexOpsPlugin extends Plugin {
           10000,
         );
       }
+      if (report.archivedTickets)
+        new Notice(`LYTEX OS: ${t('tickets.autoArchived', { n: report.archivedTickets })}`);
       if (report.recurring?.created.length)
         new Notice(
           `LYTEX OS: ${t('recurring.reconciled', { n: report.recurring.created.length })}`,
@@ -399,6 +401,9 @@ export default class LytexOpsPlugin extends Plugin {
             (r) =>
               r.created.length &&
               new Notice(`LYTEX OS: ${t('recurring.reconciled', { n: r.created.length })}`),
+          );
+          void archiveDoneTickets(core.ctx, this.settings.autoArchiveDoneDays).then(
+            (n) => n && new Notice(`LYTEX OS: ${t('tickets.autoArchived', { n })}`),
           );
         }
       }, 10 * 60_000),

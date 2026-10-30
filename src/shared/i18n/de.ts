@@ -455,6 +455,10 @@ export const de = {
   'settings.overlap.warn': 'Warnen (mit Bestätigung erlauben)',
   'settings.overlap.block': 'Blockieren',
   'settings.categories': 'Ticket-Kategorien (kommagetrennt)',
+  'settings.autoArchive': 'Erledigte Tickets archivieren nach (Tagen)',
+  'settings.autoArchiveDesc':
+    'Tickets, die so lange erledigt sind, werden beim Start und täglich automatisch archiviert. 0 = nie.',
+  'tickets.autoArchived': '{n} erledigte Tickets automatisch archiviert',
   'settings.expenseCategories': 'Ausgaben-Kategorien (kommagetrennt)',
   'settings.assignee': 'Standard-Zuständiger',
   'settings.integrations': 'Integrationen',

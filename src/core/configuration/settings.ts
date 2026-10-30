@@ -32,6 +32,8 @@ export interface LytexSettings {
   expenseCategories: string[];
   budgetThresholds: number[];
   dueSoonDays: number;
+  /** Tickets done for this many days are archived automatically (0 = never). */
+  autoArchiveDoneDays: number;
   /** People that can be assigned to tickets. */
   team: string[];
   /** The plugin owner – "Meine Arbeit" shows tickets assigned to this person. */
@@ -72,6 +74,7 @@ export const DEFAULT_SETTINGS: LytexSettings = {
   expenseCategories: ['Hardware', 'Software/Lizenzen', 'Hosting', 'Reise', 'Material', 'Sonstiges'],
   budgetThresholds: [50, 75, 90, 100],
   dueSoonDays: 7,
+  autoArchiveDoneDays: 30,
   // Filled in by the user on first start (Einstellungen → Team); no personal defaults.
   team: [],
   me: '',
@@ -123,6 +126,8 @@ export function mergeSettings(raw: unknown): LytexSettings {
   if (out.me && !out.team.includes(out.me)) out.team.unshift(out.me);
   if (!/^#[0-9a-fA-F]{6}$/.test(out.accentColor ?? '')) out.accentColor = DEFAULT_ACCENT;
   if (!Array.isArray(out.dataMigrations)) out.dataMigrations = [];
+  if (!Number.isInteger(out.autoArchiveDoneDays) || out.autoArchiveDoneDays < 0)
+    out.autoArchiveDoneDays = base.autoArchiveDoneDays;
   if (!Array.isArray(out.budgetThresholds)) out.budgetThresholds = base.budgetThresholds;
   if (typeof out.rootFolder !== 'string' || !out.rootFolder.trim())
     out.rootFolder = base.rootFolder;

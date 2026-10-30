@@ -1,6 +1,6 @@
 {
   "name": "lytex-operations-os",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "LYTEX Operations OS – local-first business operations (CRM, projects, tickets, time tracking, billing) for Obsidian.",
   "type": "module",

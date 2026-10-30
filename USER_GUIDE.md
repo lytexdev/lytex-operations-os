@@ -36,6 +36,8 @@ _Settings → Hotkeys_ (e.g. _Pause/resume timer_, _Stop and save timer_, _Start
 - **Estimates** in minutes or hours.
 - **Description & notes** in a ticket support Markdown and images (🖼 button, Ctrl+V or drag a file in;
   images are stored in the project's `Attachments` folder).
+- **Auto-archive**: tickets that have been done for 30 days are archived automatically (on start and
+  daily; configurable in the plugin settings, 0 = never). Archived tickets can be restored at any time.
 - **Delete** with confirmation (moved to the trash). Records with tracked time or billing data cannot be
   deleted – archive them instead.
 - **Settings** page: accent colour, team, API keys (stored in Obsidian's keychain).

@@ -36,6 +36,9 @@ _Timer für Ticket starten …_).
 - **Beschreibung & Notizen** im Ticket mit Markdown und Bildern (Button 🖼, Strg+V oder Datei hineinziehen;
   Bilder liegen im Ordner `Attachments` des Projekts).
 - **Kanban**: Karten auch innerhalb einer Spalte nach oben/unten ziehen (oder Alt+↑/↓).
+- **Automatisch archivieren**: Tickets, die seit 30 Tagen erledigt sind, werden beim Start und täglich
+  archiviert (einstellbar in den Plugin-Einstellungen, 0 = nie). Archivierte Tickets lassen sich jederzeit
+  wiederherstellen.
 - **Löschen** mit Rückfrage (landet im Papierkorb). Datensätze mit Zeiten/Abrechnungen können nicht
   gelöscht werden – dann archivieren.
 - **Einstellungen**: Akzentfarbe, Team, API-Schlüssel (sicher im Obsidian-Schlüsselbund).

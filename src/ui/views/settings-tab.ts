@@ -187,6 +187,21 @@ export class LytexSettingTab extends PluginSettingTab {
         .setValue(s.csv.decimalSeparator)
         .onChange(async (v) => ((s.csv.decimalSeparator = v as ',' | '.'), await save())),
     );
+    new Setting(containerEl)
+      .setName(t('settings.autoArchive'))
+      .setDesc(t('settings.autoArchiveDesc'))
+      .addText((tx) =>
+        tx.setValue(String(s.autoArchiveDoneDays)).onChange(async (v) => {
+          const n = Number(v.trim());
+          if (!Number.isInteger(n) || n < 0 || n > 3650) {
+            tx.inputEl.addClass('lx-invalid');
+            return;
+          }
+          tx.inputEl.removeClass('lx-invalid');
+          s.autoArchiveDoneDays = n;
+          await save();
+        }),
+      );
     new Setting(containerEl).setName(t('settings.thresholds')).addText((tx) =>
       tx.setValue(s.budgetThresholds.join(', ')).onChange(async (v) => {
         const list = v

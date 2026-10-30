@@ -368,6 +368,37 @@ export async function bulkArchive(
   return res;
 }
 
+/**
+ * Archive tickets that have been in a "done" status for at least `days` days (0 = disabled).
+ * Runs on startup and daily; archiving only sets the flag, notes stay where they are and can be
+ * restored. Cancelled tickets are left alone.
+ */
+export async function archiveDoneTickets(ctx: AppContext, days: number): Promise<number> {
+  if (!days || days <= 0) return 0;
+  const workflow = ctx.settings().workflow;
+  const cutoff = ctx.clock.now() - days * 86_400_000;
+  let n = 0;
+  for (const t of ctx.index.all('ticket')) {
+    if (t.archived || categoryOf(workflow, t.status) !== 'done') continue;
+    // Tickets closed before `completed_at` existed fall back to their last change.
+    const doneAt = Date.parse(t.completed_at ?? t.updated_at);
+    if (!(doneAt <= cutoff)) continue;
+    await ctx.repo.update('ticket', t.id, (d) => {
+      d.archived = true;
+      d.activity.push({
+        at: toIso(ctx.clock.now()),
+        action: 'archived',
+        detail: msg(
+          `automatisch nach ${days} Tagen erledigt`,
+          `automatically after ${days} days done`,
+        ),
+      });
+    });
+    n++;
+  }
+  return n;
+}
+
 export function ticketCategory(ctx: AppContext, t: Ticket) {
   return categoryOf(ctx.settings().workflow, t.status);
 }

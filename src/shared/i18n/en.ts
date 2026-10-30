@@ -455,6 +455,10 @@ export const en: Record<I18nKey, string> = {
   'settings.overlap.warn': 'Warn (allow after confirmation)',
   'settings.overlap.block': 'Block',
   'settings.categories': 'Ticket categories (comma separated)',
+  'settings.autoArchive': 'Archive done tickets after (days)',
+  'settings.autoArchiveDesc':
+    'Tickets that have been done this long are archived automatically on start and daily. 0 = never.',
+  'tickets.autoArchived': '{n} done tickets archived automatically',
   'settings.expenseCategories': 'Expense categories (comma separated)',
   'settings.assignee': 'Default assignee',
   'settings.integrations': 'Integrations',

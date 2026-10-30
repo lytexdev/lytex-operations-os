@@ -14,6 +14,7 @@ import { timerEntryFactory } from '@/application/use-cases/time';
 import type { AppContext } from '@/application/context';
 import { reconcileRecurring, type ReconcileReport } from '@/application/use-cases/recurring';
 import { expireQuotes } from '@/application/use-cases/finance';
+import { archiveDoneTickets } from '@/application/use-cases/tickets';
 
 export interface StartupReport {
   files: number;
@@ -22,6 +23,7 @@ export interface StartupReport {
   recovery: RecoveryReport;
   recurring: ReconcileReport | null;
   expiredQuotes: number;
+  archivedTickets: number;
 }
 
 /**
@@ -124,9 +126,11 @@ export class OpsCore {
     await this.timer.load();
     let recurring: ReconcileReport | null = null;
     let expiredQuotes = 0;
+    let archivedTickets = 0;
     if (opts.reconcile !== false) {
       recurring = await reconcileRecurring(this.ctx);
       expiredQuotes = await expireQuotes(this.ctx);
+      archivedTickets = await archiveDoneTickets(this.ctx, this.getSettings().autoArchiveDoneDays);
     }
     this.ready = true;
     return {
@@ -136,6 +140,7 @@ export class OpsCore {
       recovery,
       recurring,
       expiredQuotes,
+      archivedTickets,
     };
   }
 
